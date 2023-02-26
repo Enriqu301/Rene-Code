@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flip and Resize Square</title>
+    <style>
+      .card-container {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+
+      .card {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .card-front {
+        background-color: #F1F1F1;
+        color: black;
+        text-align: center;
+      }
+
+      .card-back {
+        background-color: #B9B9B9;
+        color: white;
+        transform: rotateY(180deg);
+        text-align: center;
+      }
+
+      .flip {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="create-card-button">Create new card</button>
+
+    <div class="card-container">
+      <div class="card card-front">
+        <p>This is the front of the card</p>
+        <button class="flip-button">Flip</button>
+      </div>
+      <div class="card card-back">
+        <form>
+          <label for="summary">Summary:</label>
+          <input type="text" id="summary" name="summary" placeholder="Enter summary...">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter name...">
+          <label for="date">Date:</label>
+          <input type="text" id="date" name="date" placeholder="Enter date...">
+          <button type="submit">Save</button>
+          <button type="submit">Blue</button>
+          <button type="submit">Green</button>
+          <button type="submit">Red</button>
+
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
