@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script defer="defer" src="script.js"></script>
     <title>Flip and Resize Square</title>
     <style>
+      @font-face {
+        font-family: 'Roboto';
+        src: url('roboto.woff2') format('woff2'),
+        url('roboto.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      body {
+        background-color: #1E1E1E;
+        font-family: 'Roboto', sans-serif;
+      }
       .card-container {
         position: absolute;
         left: 100px;
         top: 100px;
-        width: 200px;
-        height: 200px;
+        width: 205px;
+        height: 225px;
         transform-style: preserve-3d;
         transition: transform 0.5s;
       }
@@ -17,17 +30,20 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 10px;
         backface-visibility: hidden;
+
       }
 
       .card-front {
         background-color: #F1F1F1;
         color: black;
         text-align: center;
+        margin-bottom: 10px
       }
 
       .card-back {
-        background-color: #B9B9B9;
+        background-color: white;
         color: white;
         transform: rotateY(180deg);
         text-align: center;
@@ -36,6 +52,91 @@
       .flip {
         transform: rotateY(180deg);
       }
+
+
+      /* Button Styling */
+      button {
+        display: inline-block;
+        background-color: #4285f4;
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #3367d6;
+      }
+      
+      .color-button[data-color="red"] {
+        display: inline-block;
+        background-color: red;
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        
+      }
+
+      .color-button[data-color="blue"] {
+        display: inline-block;
+        background-color: blue;
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      .color-button[data-color="green"] {
+        display: inline-block;
+        background-color: green;
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+      input {
+        margin-bottom: 10px;
+      }
+
+      
     </style>
   </head>
   <body>
@@ -54,14 +155,16 @@
           <input type="text" id="name" name="name" placeholder="Enter name...">
           <label for="date">Date:</label>
           <input type="text" id="date" name="date" placeholder="Enter date...">
+          <div class="color-buttons">
+          <button class = "color-button" type="submit" data-color="red">Red</button>
+          <button class = "color-button" type="submit" data-color="blue">Blue</button>
+          <button class = "color-button" type="submit" data-color="green">Green</button>
+          </div>
           <button type="submit">Save</button>
-          <button type="submit">Blue</button>
-          <button type="submit">Green</button>
-          <button type="submit">Red</button>
-
         </form>
+
+        
       </div>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
